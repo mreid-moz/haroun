@@ -49,8 +49,8 @@ public class URLGetter {
             String line;
             StringBuffer response = new StringBuffer();
             while((line = rd.readLine()) != null) {
-                     response.append(line);
-                     response.append('\n');
+                response.append(line);
+                response.append('\n');
             }
             rd.close();
             System.out.println("Response:");
@@ -63,5 +63,4 @@ public class URLGetter {
             }
         }
     }
-   
 }
