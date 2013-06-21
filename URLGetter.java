@@ -4,27 +4,6 @@ import java.net.URL;
 import java.util.UUID;
 
 public class URLGetter {
-
-   public static byte[] readFile(String filename) {
-      byte[] bytes = null;
-      try {
-         BufferedReader reader = new BufferedReader(new FileReader(filename));
-         String         line = null;
-         StringBuilder  stringBuilder = new StringBuilder();
-         String         ls = System.getProperty("line.separator");
-
-         while ((line = reader.readLine()) != null) {
-            stringBuilder.append(line);
-            stringBuilder.append(ls);
-         }
-
-         bytes = stringBuilder.toString().getBytes();
-      } catch (Exception e) {
-         e.printStackTrace();
-      }
-      return bytes;
-   }
-
    public static void main(String[] args) {
       if (args.length < 2) {
          System.out.println("Usage: java URLGetter <method> <url> [ <post body filename> ]");
@@ -40,7 +19,7 @@ public class URLGetter {
       byte[] body = null;
       if (args.length >= 3) {
          bodyFile = args[2];
-         body = readFile(bodyFile);
+         body = Files.readFileAsBytes(bodyFile);
       }
 
       System.out.println(String.format("Sending %s request to %s %s", method, urlIn, bodyFile == null ? "" : "with post body contents from " + bodyFile));
