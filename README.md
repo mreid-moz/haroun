@@ -1,10 +1,29 @@
 Haroun
 ======
 
-A collection of the code snippets I find myself continually re-writing.
+A collection of the code snippets you find yourself continually re-writing.
 
 The name `Haroun` comes from the children's book
 [Haroun and the Sea of Stories][1] and is also the name of [my cat][2].
+
+`BitTwiddling`
+--------------
+Utilities for various tedious bitwise operations.
+- Support for writing 8/16/32/64 bit unsigned integers to an
+OutputStream (Big- or Little-Endian)
+
+`Dates`
+-------
+Dates in Java are horrible. There are many better libraries for making them
+less so (JodaTime, etc), but here we include a few common ones without going
+overboard.
+- Calculate the difference between two dates in days (or other time units)
+- Calculate how many days ago a given Date happened.
+
+`Exceptions`
+------------
+What went wrong? Let's print a stack trace to stdout. Oh wait, no...
+- Fetch the root cause of an Exception
 
 `Files`
 -------
@@ -14,6 +33,11 @@ absurdity).
 
 Apparently this is [built in to Java 7][3], but some of us are stuck with
 Java <= 6.
+
+`Strings`
+---------
+You can't extend `String` even if you want to.
+- Join a list (or varargs-literal-list) of strings.
 
 `URLGetter`
 -----------
