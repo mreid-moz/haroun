@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <style type="text/css">
+      div.form div.form-row {
+        overflow: auto;
+        padding: 5px;
+      }
+
+      div.form div.form-row:nth-child(2) {
+        background-color: #EEE;
+      }
+
+      div.form div.form-row label {
+        float: left;
+        font-weight: bold;
+        margin-top: 2px;
+        padding-right: 10px;
+        text-align: right;
+        width: 150px;
+      }
+
+      div.form div.form-row div.form-input {
+        float: left;
+        width: 310px;
+        padding-right: 10px;
+      }
+
+      div.form div.form-row div.description {
+        float: left;
+        margin-top: 3px;
+        text-align: left;
+      }
+
+      div.form input[type="text"] {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form">
+      <div class="form-row">
+        <label>File:</label>
+        <div class="form-input">
+          <input type="file" name="code-tarball" />
+        </div>
+        <div class="description">Select a file to upload</div>
+      </div>
+      <div class="form-row">
+        <label>Name:</label>
+        <div class="form-input">
+          <input type="text" name="job-name"></input>
+        </div>
+        <div class="description">Please specify an override name for the file; if you do not specify a name, the file's name will be used.</div>
+      </div>
+    </div>
+  </body>
+</html>
